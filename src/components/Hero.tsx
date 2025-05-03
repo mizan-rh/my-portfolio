@@ -195,7 +195,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="mb-4 font-mono text-highlight"
           >
-            Hi, my name is
+            Hi, I am
           </motion.p>
 
           <motion.h1
@@ -205,7 +205,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-4 text-4xl font-bold md:text-6xl lg:text-7xl text-balance"
           >
-            <span className="text-gray-200">John Doe</span>
+            <span className="text-gray-200">Mizan</span>
           </motion.h1>
 
           <motion.h2
@@ -214,9 +214,9 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-8 text-3xl font-bold text-gray-400 md:text-5xl lg:text-6xl text-balance"
           >
-            I build{" "}
+            {/* I build{" "} */}
             <span className="text-gradient text-gradient-animated">
-              digital experiences
+              Full Stack Developer
             </span>
             .
           </motion.h2>
@@ -227,9 +227,10 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="max-w-2xl mb-10 text-lg leading-relaxed text-gray-400 md:text-xl"
           >
-            I'm a software developer specializing in building (and occasionally
-            designing) exceptional digital experiences. Currently, I'm focused
-            on building accessible, human-centered products.
+            As a MERN stack developer, I craft dynamic, responsive web
+            applications using MongoDB, Express.js, React/Next, and Node.js. I’m
+            passionate about creating clean, accessible, and user-friendly
+            digital experiences that solve real-world problems.
           </motion.p>
 
           <motion.div
@@ -281,11 +282,11 @@ const Hero = () => {
               <span className="text-secondary_accent">const</span>{" "}
               <span className="text-indigo-300">developer</span> = {`{`}
               <br /> <span className="text-gray-400">name</span>:{" "}
-              <span className="text-emerald-300">'John Doe'</span>,
+              <span className="text-emerald-300">'Mizanur Rahman'</span>,
               <br /> <span className="text-gray-400">skills</span>: [
-              <span className="text-emerald-300">'React'</span>,{" "}
+              <span className="text-emerald-300">'Next.js'</span>,{" "}
               <span className="text-emerald-300">'TypeScript'</span>,{" "}
-              <span className="text-emerald-300">'Node.js'</span>],
+              <span className="text-emerald-300">'Express.js'</span>],
               <br /> <span className="text-gray-400">passionate</span>:{" "}
               <span className="text-orange-300">true</span>,
               <br /> <span className="text-gray-400">coffee</span>:{" "}

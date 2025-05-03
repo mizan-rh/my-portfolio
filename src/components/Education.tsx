@@ -1,23 +1,22 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { BookIcon } from "lucide-react";
+// import { BookIcon } from "lucide-react";
 
 const educations = [
   {
-    degree: "Master of Science in Computer Science",
-    institution: "Stanford University",
+    degree: "Master of Business Administration",
+    institution: "National University",
     logo: "https://placehold.co/200x200/6C63FF/FFFFFF?text=SU",
-    duration: "2016 - 2018",
-    description: "Specialized in Human-Computer Interaction and Web Technologies. Completed thesis on 'Improving User Experience through Adaptive Interfaces'."
+    duration: "2022 - 2023",
+    // description: "Specialized in Human-Computer Interaction and Web Technologies. Completed thesis on 'Improving User Experience through Adaptive Interfaces'."
   },
   {
-    degree: "Bachelor of Science in Computer Science",
-    institution: "University of California, Berkeley",
+    degree: "Bachelor of Business Administration",
+    institution: "National University",
     logo: "https://placehold.co/200x200/F81894/FFFFFF?text=UCB",
-    duration: "2012 - 2016",
-    description: "Graduated with honors. Focused on software engineering and database systems. Participated in multiple hackathons and coding competitions."
-  }
+    duration: "2017 - 2021",
+    // description: "Graduated with honors. Focused on software engineering and database systems. Participated in multiple hackathons and coding competitions."
+  },
 ];
 
 interface EducationProps {
@@ -29,21 +28,21 @@ const Education = ({ insideTab = false }: EducationProps) => {
   if (insideTab) {
     return <EducationContent />;
   }
-  
+
   return (
-    <section id="education" className="py-24 relative">
+    <section id="education" className="relative py-24">
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-highlight/5 blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 rounded-full bg-secondary_accent/5 blur-3xl"></div>
+        <div className="absolute w-64 h-64 rounded-full top-1/4 right-1/4 bg-highlight/5 blur-3xl"></div>
+        <div className="absolute w-64 h-64 rounded-full bottom-1/4 left-1/4 bg-secondary_accent/5 blur-3xl"></div>
       </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+
+      <div className="container relative z-10 px-4 mx-auto">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-2">
-            <span className="text-highlight font-mono">04.</span> Education
+          <h2 className="mb-2 text-3xl font-bold">
+            <span className="font-mono text-highlight">04.</span> Education
           </h2>
-          <div className="h-1 w-32 bg-gradient mb-12"></div>
-          
+          <div className="w-32 h-1 mb-12 bg-gradient"></div>
+
           <EducationContent />
         </div>
       </div>
@@ -62,20 +61,28 @@ const EducationContent = () => {
           transition={{ duration: 0.5, delay: index * 0.1 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <Card className="bg-dark-surface border-gray-800 overflow-hidden relative">
-            <div className="absolute top-0 left-0 h-full w-1 bg-gradient"></div>
+          <Card className="relative overflow-hidden border-gray-800 bg-dark-surface">
+            <div className="absolute top-0 left-0 w-1 h-full bg-gradient"></div>
             <CardContent className="p-6">
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                <div className="md:w-1/4 flex flex-col items-center md:items-start">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden mb-2">
-                    <img src={edu.logo} alt={edu.institution} className="w-full h-full object-cover" />
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+                <div className="flex flex-col items-center md:w-1/4 md:items-start">
+                  <div className="w-16 h-16 mb-2 overflow-hidden rounded-lg">
+                    <img
+                      src={edu.logo}
+                      alt={edu.institution}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
-                  <div className="text-gray-400 text-sm mt-2">{edu.duration}</div>
+                  <div className="mt-2 text-sm text-gray-400">
+                    {edu.duration}
+                  </div>
                 </div>
                 <div className="md:w-3/4">
-                  <h3 className="text-xl font-semibold text-gray-200 mb-1">{edu.degree}</h3>
-                  <div className="text-highlight mb-3">{edu.institution}</div>
-                  <p className="text-gray-400">{edu.description}</p>
+                  <h3 className="mb-1 text-xl font-semibold text-gray-200">
+                    {edu.degree}
+                  </h3>
+                  <div className="mb-3 text-highlight">{edu.institution}</div>
+                  {/* <p className="text-gray-400">{edu.description}</p> */}
                 </div>
               </div>
             </CardContent>

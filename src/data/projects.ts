@@ -172,7 +172,8 @@ export const projects: Project[] = [
       "Bike Store Client is a comprehensive web application for browsing, purchasing, and managing bikes. It features an admin panel for managing inventory, orders, and users, alongside a user-friendly front-end for customers.",
     problemStatement:
       "The traditional bike selling model lacked an efficient online platform for customers to browse and purchase bikes, and for admins to manage inventory and orders seamlessly.",
-    image: "https://i.ibb.co/FLSNbSsf/bike-store-image.png",
+    image:
+      "https://i.ibb.co.com/jkPHGTWb/Home-Bike-Shop-Online-Delivary-feature.png",
     github: "https://github.com/mizan-rh/bike-store-client",
     demo: "https://bike-store-b4-a4-frontend.vercel.app/",
     featured: true,
