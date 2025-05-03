@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const projects = [
   {
     id: 1,
-    title: "Portfolio Website",
+    title: "Basa Finder Platform",
     description:
       "A smart rental platform built with Next.js and TailwindCSS, featuring role-based access, secure payments, and responsive design.",
     image:
@@ -28,27 +28,42 @@ const projects = [
   },
   {
     id: 2,
-    title: "E-Commerce Dashboard",
+    title: "Bike Store E-Commerce Platform",
     description:
-      "An admin dashboard for e-commerce platforms with analytics, inventory management, and order processing.",
+      "A full-stack e-commerce platform for bike sales with user authentication, product management, and order processing.",
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    github: "#",
-    demo: "#",
+      "https://i.ibb.co.com/jkPHGTWb/Home-Bike-Shop-Online-Delivary-feature.png",
+    github: "https://github.com/mizan-rh/bike-store-client?tab=readme-ov-file",
+    demo: "https://bike-store-b4-a4-frontend.vercel.app/",
     featured: true,
-    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+    ],
   },
   {
     id: 3,
-    title: "Task Management App",
+    title: "Yoga Class Booking Website",
     description:
-      "A collaborative task management application with real-time updates, notifications, and team features.",
-    image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
-    github: "#",
-    demo: "#",
+      "A yoga class booking platform with role-based access, secure payments, and responsive design.",
+    image: "https://i.ibb.co.com/Y5PVrxQ/Yogayuq-feature.png",
+    github: "https://github.com/mizan-rh/yogayuq-client-side",
+    demo: "https://summer-camp-ec2ea.web.app/",
     featured: true,
-    technologies: ["React", "Firebase", "Tailwind CSS", "Redux"],
+    technologies: [
+      "React",
+      "Firebase",
+      "Tailwind CSS",
+      "React Router",
+      "Axios",
+      "Framer Motion",
+      "React Hook Form",
+    ],
   },
 ];
 
