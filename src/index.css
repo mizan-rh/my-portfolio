@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 253 95% 69%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 323 91% 54%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-dark text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    cursor: auto; /* Keep normal cursor */
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  /* Custom cursor styling - only glow effect, no custom cursor */
+  a,
+  button,
+  [role="button"],
+  input,
+  label,
+  select,
+  textarea {
+    cursor: auto; /* Changed to auto to use default browser cursor */
+    @apply relative z-20;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply text-transparent transition-all duration-500 bg-gradient-to-r from-highlight via-highlight/80 to-secondary_accent/80 bg-clip-text hover:from-secondary_accent hover:to-highlight;
+  }
+
+  .bg-gradient {
+    @apply transition-all duration-300 bg-gradient-to-r from-highlight to-secondary_accent hover:from-highlight/90 hover:to-secondary_accent/90;
+  }
+
+  .bg-gradient-soft {
+    @apply bg-gradient-to-r from-highlight/80 to-secondary_accent/80;
+  }
+
+  .bg-gradient-subtle {
+    @apply bg-gradient-to-br from-highlight/10 via-secondary_accent/5 to-transparent;
+  }
+
+  .border-gradient {
+    @apply border-2 border-transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(to right, #0a0a16, #0a0a16),
+      linear-gradient(to right, #6c63ff, #f81894);
+  }
+
+  .glass {
+    @apply border bg-white/5 backdrop-blur-sm border-white/10;
+  }
+
+  .glass-dark {
+    @apply border bg-black/20 backdrop-blur-sm border-white/5;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg hover:shadow-highlight/10;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-highlight focus:ring-offset-2 focus:ring-offset-dark;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Mouse glow related utilities - kept intact */
+  .mouse-glow {
+    @apply fixed z-50 pointer-events-none;
+    animation: mouse-glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Custom cursor utilities - kept intact */
+  .cursor-dot {
+    @apply pointer-events-none fixed z-[60] h-4 w-4 rounded-full bg-gradient-to-r from-highlight to-secondary_accent;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, opacity 0.2s;
+  }
+
+  .cursor-ring {
+    @apply pointer-events-none fixed z-[59] h-8 w-8 rounded-full border-2 border-white/40;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, opacity 0.3s;
+  }
+
+  .skill-progress-animated {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-progress-animated::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 15px 15px;
+    animation: shimmer 1.5s linear infinite;
+    z-index: 1;
+  }
+
+  /* Skills circle background style - removed */
+}
+
+@keyframes mouse-glow {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.5;
+    filter: blur(15px) brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(20px) brightness(1.2);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
