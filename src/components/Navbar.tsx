@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +28,12 @@ const Navbar = () => {
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
+    { name: "Professional", href: "#professional" },
     // { name: 'Experience', href: '#experience' },
     // { name: 'Education', href: '#education' },
     // { name: 'Certifications', href: '#certifications' },
     { name: "Contact", href: "#contact" },
+    { name: "Blogs", href: "/blogs" },
   ];
 
   const isActive = (path: string) => {
@@ -42,17 +45,39 @@ const Navbar = () => {
     return location.pathname.startsWith(path);
   };
 
+  // const handleLinkClick = (
+  //   e: React.MouseEvent<HTMLAnchorElement>,
+  //   href: string
+  // ) => {
+  //   if (href.startsWith("#")) {
+  //     e.preventDefault();
+  //     const element = document.getElementById(href.substring(1));
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: "smooth" });
+  //       // Update URL without page reload
+  //       window.history.pushState(null, "", href);
+  //     }
+  //   }
+  // };
+
   const handleLinkClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
     if (href.startsWith("#")) {
       e.preventDefault();
-      const element = document.getElementById(href.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        // Update URL without page reload
-        window.history.pushState(null, "", href);
+
+      const sectionId = href.substring(1);
+
+      if (location.pathname !== "/") {
+        // Navigate to home with scroll target as state
+        navigate("/", { state: { scrollTo: sectionId } });
+      } else {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", href);
+        }
       }
     }
   };

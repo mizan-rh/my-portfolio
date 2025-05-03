@@ -53,6 +53,21 @@
     cursor: auto; /* Changed to auto to use default browser cursor */
     @apply relative z-20;
   }
+
+  a,
+  button,
+  [role="button"] {
+    cursor: pointer; /* ✅ Use pointer hand for links & buttons */
+    @apply relative z-20;
+  }
+
+  input,
+  label,
+  select,
+  textarea {
+    cursor: text; /* ✅ Use text cursor for text fields */
+    @apply relative z-20;
+  }
 }
 
 @layer utilities {
