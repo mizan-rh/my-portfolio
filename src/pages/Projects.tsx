@@ -141,7 +141,7 @@ const Projects = () => {
                           </svg>
                         </Button>
                         <Button
-                          className="transition-opacity bg-gradient hover:opacity-90"
+                          className="text-white transition-opacity bg-gradient hover:opacity-90"
                           onClick={() => navigate(`/project/${project.id}`)}
                         >
                           Project Details

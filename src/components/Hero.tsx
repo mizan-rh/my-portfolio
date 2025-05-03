@@ -205,7 +205,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-4 text-4xl font-bold md:text-6xl lg:text-7xl text-balance"
           >
-            <span className="text-gray-200">Mizan</span>
+            <span className="text-gray-200">Mizanur Rahman</span>
           </motion.h1>
 
           <motion.h2
